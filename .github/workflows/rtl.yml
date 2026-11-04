@@ -1,0 +1,13 @@
+name: RTL verification
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: sudo apt-get update -qq && sudo apt-get install -y iverilog yosys
+      - name: Compile and simulate
+        run: make test
+      - name: Synthesize and check
+        run: make synth

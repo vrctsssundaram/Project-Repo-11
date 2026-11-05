@@ -1,4 +1,4 @@
-# SGDMA-AXI4
+# AXI4 scatter-gather DMA reader
 
 Descriptor-fed 32-bit memory-to-stream transfer engine.
 

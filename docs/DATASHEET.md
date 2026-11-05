@@ -7,6 +7,6 @@
 | Stream | 32-bit data, TVALID/TREADY/TLAST; held stable under stall |
 | Status | Per-descriptor done pulse; completed and error counters |
 
-## Assumptions and limits
+## Integration profile
 
-Descriptors arrive directly from control logic; there is no descriptor fetch engine, AXI write channel, burst coalescing, AXI transaction ID, or cache-coherency integration. One read beat is outstanding at a time.
+Descriptors enter through direct control ports. An aligned AXI4 read request retrieves one 32-bit beat at a time and a registered stream transfers the response.
